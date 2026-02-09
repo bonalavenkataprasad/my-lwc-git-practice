@@ -5,7 +5,7 @@
       "default": true
     }
   ],
-  "name": "FLMProject",
+  "name": "MyLWC-Git-Practice",
   "namespace": "",
   "sfdcLoginUrl": "https://login.salesforce.com",
   "sourceApiVersion": "65.0"
