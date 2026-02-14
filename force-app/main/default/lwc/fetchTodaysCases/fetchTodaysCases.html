@@ -1,0 +1,37 @@
+<template>
+    <lightning-card title="Today's Cases" class="slds-m-left_xx-large">
+
+        <!-- When data is available -->
+        <template if:true={cases.data}>
+            <template for:each={cases.data} for:item="cdata">
+                <div key={cdata.Id} class="slds-box slds-m-bottom_small">
+                    <p><strong>Case Number:</strong> {cdata.CaseNumber}</p>
+                    <p><strong>Case Id:</strong> {cdata.Id}</p>
+
+                    <p>
+                        <strong>Created Date:</strong>
+                        <lightning-formatted-date-time
+                            value={cdata.CreatedDate}
+                            year="numeric"
+                            month="short"
+                            day="2-digit"
+                            hour="2-digit"
+                            minute="2-digit">
+                        </lightning-formatted-date-time>
+                    </p>
+
+                    <p><strong>Priority:</strong> {cdata.Priority}</p>
+                    <p><strong>Origin:</strong> {cdata.Origin}</p>
+                </div>
+            </template>
+        </template>
+
+        <!-- Error handling -->
+        <template if:true={cases.error}>
+            <p class="slds-text-color_error slds-p-around_small">
+                Error loading today’s cases
+            </p>
+        </template>
+
+    </lightning-card>
+</template>

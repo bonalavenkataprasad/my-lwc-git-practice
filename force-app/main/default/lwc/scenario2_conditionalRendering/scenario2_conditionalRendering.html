@@ -1,0 +1,19 @@
+<template>
+<lightning-card  title =" Scenario2 Conditional Rendering Based on Role">
+    
+    <div class=" slds-box slds-m-around_medium">
+        <template if:true={isAdmin}>
+                <p>Welcome Admin! You have full access.</p>
+        </template>
+        <template if:false={isAdmin}>
+                <p>Welcome User! Limited access.</p>
+        </template>
+    </div>
+    <div class="slds-m-around_medium">
+   <lightning-helptext content="Use the buttons to toggle between Admin and Non-Admin views."></lightning-helptext>
+    <lightning-button label = "Make Admin" onclick={makeAdmin} ></lightning-button>
+    <lightning-button label = "Make Non-Admin" onclick={makeNonAdmin} class="slds-m-left_medium" ></lightning-button>
+    </div>
+</lightning-card>
+
+</template>

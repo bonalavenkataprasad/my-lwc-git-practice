@@ -1,0 +1,27 @@
+<template>
+    <lightning-card title="Scenario 7: Empty State Handling">
+
+        <div class="slds-m-around_medium">
+
+            <!-- If contacts exist -->
+            <template if:true={hasContacts}>
+                <template for:each={contacts} for:item="contact">
+                    <div key={contact.id} class="slds-box slds-m-bottom_small">
+                        <p><strong>Name:</strong> {contact.name}</p>
+                        <p><strong>Email:</strong> {contact.email}</p>
+                        <p><strong>Phone:</strong> {contact.phone}</p>
+                    </div>
+                </template>
+            </template>
+
+            <!-- If no contacts -->
+            <template if:false={hasContacts}>
+                <p class="slds-text-color_weak slds-align_absolute-center">
+                    No records found.
+                </p>
+            </template>
+
+        </div>
+
+    </lightning-card>
+</template>
